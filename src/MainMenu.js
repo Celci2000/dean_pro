@@ -13,13 +13,16 @@ const [activeMenu , setActiveMenu] = useState(null)
 // }
 
 
-
+const [icon,setIcon] = useState(false)
+function toggleIcon(){
+    setIcon((e)=>!e)
+}
 return(
    <div>
    
 
 
-   <nav className="bg-red-800">
+   <nav className=" hidden md:block bg-red-800">
    <ul className="flex items-center justify-between">
     <li className="relative">
         <Link to="/">
@@ -40,7 +43,7 @@ return(
             <Link to="/research_suprevisors">Research  Suprevisors</Link> 
         </li>
         <li className="px-4 py-2  bg-red-800 hover:bg-red-400 text-white"> 
-            <a href="/">Reaserch  Scholars </a>
+            <Link to="/research_scholars"> Reaserch  Scholars </Link>
         </li>
      </ul>)
     }

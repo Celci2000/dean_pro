@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
 const Navbar = () => {
+
   const options = [
     { title: 'Hostel Admission', link: '/' },
     { title: 'Council Election 2023-25', link: '/about' },
@@ -16,9 +18,15 @@ const Navbar = () => {
     { title: 'Contact Us', link: '/support' }
   ];
 
+  const [icon ,setIcon]=useState(false);
+  function toggle(){
+    setIcon((e)=>!e)
+  }
   return (
-    <nav className="bg-gray-800">
-      <ul className="flex items-center justify-between py-4 px-6">
+    <nav className=" bg-gray-800">
+     
+
+      <ul className="hidden md:flex items-center justify-between py-4 px-6 bg-gray-800">
         {options.map((option, index) => (
           <li key={index}>
             <Link
@@ -30,6 +38,22 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
+
+     <div className="block  ">
+      <button className="sm:visible md:hidden text-white" onClick={toggle}><MenuOpenIcon />TOP MENU</button>
+      <button className="sm:visible md:hidden text-white  "><MenuOpenIcon/>Main Menu</button></div>
+     {icon&&   <ul className="  block items-center justify-between py-4 px-6bg-gray-800">
+        {options.map((option, index) => (
+          <li key={index}>
+            <Link
+              to={option.link}
+              className="text-white hover:text-gray-300 text-sm font-medium px-2 py-1 rounded-md"
+            >
+              {option.title}
+            </Link>
+          </li>
+        ))}
+      </ul> }
     </nav>
   );
 };
