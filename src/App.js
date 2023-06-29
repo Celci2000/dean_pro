@@ -8,6 +8,8 @@ import Navbar from './Navbar.js'
 import ResearchSuprevisors from './ResearchSuprevisors.js'
 import ResearchScholars from './ResearchScholars.js'
 import Home from './Home'
+import data from './data.js'
+import Suprevisor from './Suprevisor.js'
 function App() {
   return (
     <div className="flex flex-col  ">
@@ -19,7 +21,10 @@ function App() {
         <Route exact path="/" element={<Home />}></Route>
         <Route exact path="/research_suprevisors" element ={<ResearchSuprevisors/>}></Route>
         <Route exact path="/research_scholars" element ={<ResearchScholars />}></Route>
-        
+       {data.map((e)=>
+        <Route key ={e.id} exact path="/research_suprevisors/:id" element={<Suprevisor {...data} />}></Route>)
+       
+      }
           
       </Routes>
       

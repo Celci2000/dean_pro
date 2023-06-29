@@ -1,8 +1,12 @@
-function Suprevisor(props){
-    console.log(props)
+function Suprevisor  (props){
+
+    
     return(<div> 
         <h1>hii</h1>
-      <h1>{props.name}</h1>
+        {
+          console.log(props.job)
+        }
+      <h1 className="text-black">{props.name}</h1>
     </div>)
 }
 export default Suprevisor
