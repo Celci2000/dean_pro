@@ -5,6 +5,24 @@
 .logo{
   display:flex;
 }
+
+.heading{
+  background-image:url(clgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height:190px;
+  color: white;
+  
+}
+
+.img{
+    width:350px;
+    height:200px;
+    
+}
+
+
 /* .btn {
   position: relative;
   display: inline-block;
