@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
-
+import Logo from './Logo'
+// import { BrowserRouter as Router ,Routes , Route,useParams} from "react-router-dom"
+import MainMenu from './MainMenu'
 const Navbar = () => {
 
   const options = [
@@ -23,6 +25,7 @@ const Navbar = () => {
     setIcon((e)=>!e)
   }
   return (
+    <div>
     <nav className=" bg-gray-800">
      
 
@@ -55,6 +58,9 @@ const Navbar = () => {
         ))}
       </ul> }
     </nav>
+    <Logo />
+    <MainMenu />
+    </div>
   );
 };
 

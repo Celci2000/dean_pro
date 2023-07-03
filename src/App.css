@@ -18,11 +18,15 @@
 
 .img{
     width:350px;
-    height:200px;
+    height:250px;
     
 }
 
-
+.menu{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* .btn {
   position: relative;
   display: inline-block;
